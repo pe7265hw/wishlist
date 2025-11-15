@@ -1,6 +1,9 @@
 {% extends 'travel_wishlist/base.html' %}
 {%block content%}
 
+<!-- This is the main page for the website, shows locations that the user wants to go but
+ has not visited yet -->
+
 <h2>Travel Wishlist</h2>
 
 <form method="POST" action="{% url 'place_list' %}">

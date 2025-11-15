@@ -1,5 +1,5 @@
 {% load static %}
-
+<!-- Base HTML used to extend to other pages to keep similar look with sakura stylesheet -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +12,8 @@
 
     <body>
 
+        <!-- Content from other sites uses these block tags to insert their own HTML content and
+         reuses what appears on this page -->
         {% block content %}
         {% endblock %}
 
