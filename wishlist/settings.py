@@ -80,11 +80,20 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'places',
         'USER': 'traveler',
-        'PASSWORD': os.getenv('TRAVELER_PW'),
+        'PASSWORD': os.environ.get('TRAVELER_PW'),
         'HOST': '/couldsql/travelwishlist-480003:us-central1:wishlist-mysql',
         'PORT': '3306'
     }
 }
+
+# connect to the same database when this code is running on our computer
+# here need to connect viathe cloud proxy
+# test if we are running locally? modify for local dev
+
+if not os.getenv('GAE_INSTANCE'):
+    # app is not running at GAE, local settings
+    DATABASES['default']['HOST'] = '127.0.0.1'
+    
 
 
 # Password validation
